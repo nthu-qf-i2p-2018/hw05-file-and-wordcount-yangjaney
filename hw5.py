@@ -17,7 +17,6 @@ def main(filename):
     # extract all words from lines
     for line in lines:
         # split a line of text into a list words
-        #line = line.strip()
         # "I have a dream." => ["I", "have", "a", "dream."]
         words = line.split()
 
@@ -51,11 +50,12 @@ def main(filename):
 
     # dump to a json file named "wordcount.json"
     f = open('wordcount.json', 'w')
-    json.dump(word_counter, open('wordcount.json', 'w'))
+    json.dump(counter, f)
+    json.dump(counter, open('wordcount.json', 'w'))
 
     # BONUS: dump to a pickle file named "wordcount.pkl"
     # hint: dump the Counter object directly
-    pickle.dump(word_counter, open('wordcount.pickle', 'wb'))
+    pickle.dump(counter, open('wordcount.pkl', 'wb'))
 
 
 if __name__ == '__main__':
